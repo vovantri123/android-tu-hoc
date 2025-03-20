@@ -24,7 +24,6 @@ public class Cau5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_cau5);
@@ -39,8 +38,7 @@ public class Cau5Activity extends AppCompatActivity {
                 String input = editTextInputCount.getText().toString();
 
                 if (TextUtils.isEmpty(input)) {
-                    Toast.makeText(Cau5Activity.this, "Vui lòng nhập số lượng", Toast.LENGTH_SHORT).show();
-                    return;
+                    Toast.makeText(Cau5Activity.this, "Vui lòng nhập số lượng", Toast.LENGTH_SHORT).show();                    return;
                 }
 
                 int count;

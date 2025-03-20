@@ -23,7 +23,7 @@
 
         -->
         <activity
-            android:name=".Bai4BaiTap1bActivity"
+            android:name=".Bai2Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

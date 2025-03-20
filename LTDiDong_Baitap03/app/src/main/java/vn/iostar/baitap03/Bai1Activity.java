@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Bai1Activity extends AppCompatActivity {
     private RelativeLayout layout;
-    private int[] backgrounds = {R.drawable.bg1, R.drawable.bg2, R.drawable.bg3, R.drawable.bg4, R.drawable.bg5};
+    private int[] backgrounds = {R.drawable.bg1, R.drawable.bg2, R.drawable.bg3, R.drawable.bg4, R.drawable.bg5}; //  mảng backgrounds không chứa tên tệp ảnh, mà chứa ID tài nguyên (int) do Android tự động gán cho từng ảnh khi biên dịch.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

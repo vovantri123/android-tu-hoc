@@ -1,5 +1,6 @@
 package vn.iostar.baitap01;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,11 +18,11 @@ public class Cau4Activity extends AppCompatActivity {
     private EditText editTextArray;
     private Button buttonProcess;
     private TextView textViewResult;
+    private Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_cau4);
@@ -29,6 +30,7 @@ public class Cau4Activity extends AppCompatActivity {
         editTextArray = findViewById(R.id.editTextArray);
         buttonProcess = findViewById(R.id.buttonProcess);
         textViewResult = findViewById(R.id.textViewResult);
+        btnNext = findViewById(R.id.btnNext);
 
         buttonProcess.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +58,13 @@ public class Cau4Activity extends AppCompatActivity {
                     textViewResult.setText(result);
                     Log.d("PrimeNumbers", result);
                 }
+            }
+        });
+        btnNext.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Cau4Activity.this, Cau5Activity.class);
+                startActivity(intent);
             }
         });
     }
