@@ -13,11 +13,11 @@
         android:theme="@style/Theme.ViDuSharedPreferences"
         tools:targetApi="31">
         <!--
-         .Vidu1SaveLoginActivity
-         .Vidu2SaveEmailPasswordOnDeviceActivity
+         .Vidu1SaveLoginActivity  // Lúc mở lên nó sẽ tự load username, password
+         .Vidu2SaveEmailPasswordOnDeviceActivity // Lúc mở lên nó tự động login luôn
          -->
         <activity
-            android:name=".Vidu2SaveEmailPasswordOnDeviceActivity"
+            android:name=".Vidu1SaveLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

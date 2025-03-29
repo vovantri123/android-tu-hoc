@@ -7,6 +7,7 @@ import retrofit2.http.GET;
 
 public interface APIService {
     @GET("categories.php")
-    Call<List<Category>> getCategoryAll();
+    Call<List<Category>> getCategoryAll(); // Call<T> đại diện cho một yêu cầu HTTP bất đồng bộ (từng cái) hoặc đồng bộ (song song)
+
 
 }

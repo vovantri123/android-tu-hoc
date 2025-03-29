@@ -4,15 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
+
     <GridView
         android:id="@+id/gridview1"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:numColumns="3"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:numColumns="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnThem"  />
+        app:layout_constraintTop_toBottomOf="@+id/btnThem" />
 
     <EditText
         android:id="@+id/editText1"

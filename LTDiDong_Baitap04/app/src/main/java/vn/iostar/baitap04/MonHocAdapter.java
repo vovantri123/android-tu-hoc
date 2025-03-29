@@ -90,7 +90,7 @@ public class MonHocAdapter extends BaseAdapter {
             viewHolder.textName = (TextView) view.findViewById(R.id.textName);
             viewHolder.textDesc = (TextView)  view.findViewById(R.id.textDesc);
             viewHolder.imagePic = (ImageView) view.findViewById(R.id.imagePic);
-            view.setTag(viewHolder);
+            view.setTag(viewHolder); // Lưu viewHolder vào view để tái sử dụng.
         // Mục đích sử dụng ViewHolder, để tái sử dụng View, nhằm tránh việc tạo View mới và findViewById quá nhiều.
 
         }else{

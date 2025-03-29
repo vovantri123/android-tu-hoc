@@ -5,7 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class BaseClient {
+public class BaseClient { // Không xài
     private static final HttpLoggingInterceptor sLogging =
             new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
 

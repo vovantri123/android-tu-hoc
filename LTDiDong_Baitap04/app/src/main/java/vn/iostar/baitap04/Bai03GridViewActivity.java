@@ -69,14 +69,6 @@ public class Bai03GridViewActivity extends AppCompatActivity {
         btnCapNhat = (Button) findViewById(R.id.btnCapNhat);
         btnXoa = (Button) findViewById(R.id.btnXoa);
 
-        btnThem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = editText1.getText().toString();
-                arrayList.add(name);
-                adapter.notifyDataSetChanged(); // Thông báo cho Adapter rằng dữ liệu đã thay đổi, để cập nhật lại danh sách hiển thị trên GridView.
-            }
-        });
 
         //bắt sự kiện trên từng dòng của GridView
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -88,20 +80,21 @@ public class Bai03GridViewActivity extends AppCompatActivity {
             }
         });
 
-        btnCapNhat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                arrayList.set(vitri, editText1.getText().toString());
-                adapter.notifyDataSetChanged();
-            }
+        btnThem.setOnClickListener(v -> {
+            String name = editText1.getText().toString();
+            arrayList.add(name);
+            adapter.notifyDataSetChanged(); // Thông báo cho Adapter rằng dữ liệu đã thay đổi, để cập nhật lại danh sách hiển thị trên GridView.
         });
 
-        btnXoa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                arrayList.remove(vitri);
-                adapter.notifyDataSetChanged();
-            }
+        btnCapNhat.setOnClickListener(v -> {
+            arrayList.set(vitri, editText1.getText().toString());
+            adapter.notifyDataSetChanged();
+
+        });
+
+        btnXoa.setOnClickListener(v -> {
+            arrayList.remove(vitri);
+            adapter.notifyDataSetChanged();
         });
     }
 }

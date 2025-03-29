@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         // Ánh xạ ListView
         listView = findViewById(R.id.listView1);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -103,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     public void DialogCapNhatNotes(String name, int id) {
         Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_edit_note);
+        dialog.setContentView(R.layout.dialog_edit_note); // ánh xạ xml qua
 
         // Ánh xạ
         EditText editText = dialog.findViewById(R.id.editTextName);
@@ -155,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    // Hàm dialog Xóa
+    // Hàm AlertDialog Xóa
     public void DialogDelete(String name, final int id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Bạn có muốn xóa Notes " + name + " này không?");

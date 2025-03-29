@@ -41,13 +41,13 @@ public class Vidu1SaveLoginActivity extends AppCompatActivity{
                         editor.putString("taikhoan", username);
                         editor.putString("matkhau", password);
                         editor.putBoolean("trangthai", true);
-                        editor.commit(); // xác nhận việc lưu
+                        editor.apply(); // xác nhận việc lưu
                     } else {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.remove("taikhoan");
                         editor.remove("matkhau");
                         editor.remove("trangthai");
-                        editor.commit();
+                        editor.apply();
                     }
                 } else {
                     Toast.makeText(Vidu1SaveLoginActivity.this, "Dang nhap that bại", Toast.LENGTH_SHORT).show();
@@ -57,7 +57,7 @@ public class Vidu1SaveLoginActivity extends AppCompatActivity{
 
         // Lấy dữ liệu đã được lưu
         // Khởi tạo SharedPreferences
-        sharedPreferences = getSharedPreferences("dataLogin", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("dataLogin", MODE_PRIVATE);  // dataLogin là trong ViDu1
 
         // Lấy giá trị từ SharedPreferences
         usernameTxt.setText(sharedPreferences.getString("taikhoan", ""));

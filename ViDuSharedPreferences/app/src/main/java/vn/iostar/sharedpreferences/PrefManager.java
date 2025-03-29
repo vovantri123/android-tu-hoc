@@ -3,7 +3,7 @@ package vn.iostar.sharedpreferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class PrefManager {  // Class dùng để lưu dữ liệu
+public class PrefManager {  // Class dùng để lưu dữ liệu //Dùng cho ví dụ 2
     Context context;
 
     // Constructor
@@ -17,7 +17,7 @@ public class PrefManager {  // Class dùng để lưu dữ liệu
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("Email", email);
         editor.putString("Password", password);
-        editor.commit();
+        editor.apply();  // Nên dùng aplly thay cho commit
     }
 
     // Lấy email từ SharedPreferences

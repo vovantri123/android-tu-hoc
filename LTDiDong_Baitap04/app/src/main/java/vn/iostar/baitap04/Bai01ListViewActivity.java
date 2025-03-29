@@ -26,8 +26,9 @@ public class Bai01ListViewActivity extends AppCompatActivity {
         ListView listView;
         ArrayList<String> arrayList;
 
+
         //ánh xạ
-        listView = (ListView) findViewById(R.id.listview1);
+        listView = findViewById(R.id.listview1);
         //Thêm dữ liệu vào ArrayList
         arrayList = new ArrayList<>();
         arrayList.add("Java");

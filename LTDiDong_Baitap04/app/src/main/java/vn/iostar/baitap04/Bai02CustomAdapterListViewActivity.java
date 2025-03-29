@@ -16,8 +16,6 @@ public class Bai02CustomAdapterListViewActivity extends AppCompatActivity {
 
     private ArrayList<MonHoc> arrayList;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
