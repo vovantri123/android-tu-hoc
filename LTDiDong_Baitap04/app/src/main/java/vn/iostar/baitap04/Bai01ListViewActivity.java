@@ -37,29 +37,19 @@ public class Bai01ListViewActivity extends AppCompatActivity {
         arrayList.add("Kotlin");
         arrayList.add("Dart");
 
-        // Tạo ArrayAdapter
+        // Dùng Adapter có sẵn, gồm các tham số
+        // Context: màn hình hiển thị
+        // Dạng Layout cho mỗi item
+        // Dữ liệu arrayList
         ArrayAdapter adapter = new ArrayAdapter(
-                Bai01ListViewActivity.this,   // Context: màn hình hiện tại (Activity)
-                android.R.layout.simple_list_item_1, // Layout mặc định của Android cho mỗi item trong ListView
-                arrayList  // Dữ liệu nguồn (danh sách các phần tử)
+                this,
+                android.R.layout.simple_list_item_1, //  Layout mặc định của Android
+                arrayList
         );
+
 
         //truyền dữ liệu từ adapter ra listview
         listView.setAdapter(adapter);
-
-        /*
-        //bắt sự kiện click nhanh trên từng dòng của Listview
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //code yêu cầu
-                //i: trả về vị trí click chuột trên ListView -> i ban đầu =0
-                Toast.makeText(Bai01ListViewActivity.this,
-                        "Bạn đang nhấn giữ "+ i + "-" + arrayList.get(i) ,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-        */
 
         // ----------------------------------------------------------------------------------------
 
@@ -77,7 +67,7 @@ public class Bai01ListViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = editText1.getText().toString();
-                arrayList.add(name);
+                arrayList.add(name);  // 1 của ArrayList
                 adapter.notifyDataSetChanged(); // Thông báo cho Adapter rằng dữ liệu đã thay đổi, để cập nhật lại danh sách hiển thị trên ListView.
             }
         });
@@ -92,7 +82,7 @@ public class Bai01ListViewActivity extends AppCompatActivity {
                 // l (id): ID của item (thường dùng khi có cơ sở dữ liệu).
 
                         //lấy nội dung đua lên edittext
-                editText1.setText(arrayList.get(i));
+                editText1.setText(arrayList.get(i)); // 2 của ArrayList
                 vitri = i;
             }
         });
@@ -100,7 +90,7 @@ public class Bai01ListViewActivity extends AppCompatActivity {
         btnCapNhat.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              arrayList.set(vitri, editText1.getText().toString());
+              arrayList.set(vitri, editText1.getText().toString()); // 3 của ArrayList
               adapter.notifyDataSetChanged();
           }
         });
@@ -108,10 +98,9 @@ public class Bai01ListViewActivity extends AppCompatActivity {
         btnXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                arrayList.remove(vitri);
+                arrayList.remove(vitri); // 4 của ArrayList
                 adapter.notifyDataSetChanged();
             }
         });
-
     }
 }

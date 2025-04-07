@@ -1,14 +1,14 @@
 package vn.iostar.baitap04;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+
+import vn.iostar.baitap04.adapter.MonHocAdapter;
+import vn.iostar.baitap04.model.MonHoc;
 
 public class Bai04CustomAdapterGridViewActivity extends AppCompatActivity {
     //khai báo
@@ -26,7 +26,8 @@ public class Bai04CustomAdapterGridViewActivity extends AppCompatActivity {
         //ánh xạ
         AnhXa();
         //Tạo Adapter
-        adapter = new MonHocAdapter(Bai04CustomAdapterGridViewActivity.this,
+        adapter = new MonHocAdapter(
+                this,
                 R.layout.row_monhoc,
                 arrayList
         );

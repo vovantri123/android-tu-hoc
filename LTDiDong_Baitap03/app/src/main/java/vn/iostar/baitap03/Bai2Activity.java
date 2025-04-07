@@ -58,6 +58,7 @@ public class Bai2Activity extends AppCompatActivity {
         btnDialog.setOnClickListener(v -> diaLog1());
     }
 
+    // Popup
     private void popup() {
         PopupMenu popupMenu = new PopupMenu(Bai2Activity.this, btnPopup);
         popupMenu.getMenuInflater().inflate(R.menu.menu_setting,popupMenu.getMenu());
@@ -85,11 +86,12 @@ public class Bai2Activity extends AppCompatActivity {
         popupMenu.show();
     }
 
+    // Context Menu
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.menu_setting2, menu);
-        menu.setHeaderTitle("Context Menu");
+        //menu.setHeaderTitle("Context Menu");
     }
 
     @Override
@@ -110,9 +112,9 @@ public class Bai2Activity extends AppCompatActivity {
     // Dialog
     private void diaLog1() {
         Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Bỏ tiêu đề
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Bỏ tiêu đề
         dialog.setContentView(R.layout.dialog); // Gán layout dialog
-        dialog.setCanceledOnTouchOutside(false); // Không đóng khi chạm ngoài
+        dialog.setCanceledOnTouchOutside(true); // Đóng khi chạm ngoài
 
         // Ánh xạ các thành phần trong dialog.xml
         EditText editText1 = dialog.findViewById(R.id.editNumber1);

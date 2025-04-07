@@ -38,7 +38,7 @@ public class Bai03GridViewActivity extends AppCompatActivity {
 
         //Tạo ArrayAdapter
         ArrayAdapter adapter = new ArrayAdapter(
-                Bai03GridViewActivity.this,
+                this,
                 android.R.layout.simple_list_item_1,
                 arrayList
         );

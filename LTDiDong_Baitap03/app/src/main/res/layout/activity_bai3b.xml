@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@android:color/black"
     android:padding="2dp">
-    <!-- vertical thường tk con sẽ height: 0dp, horizontal thường tk con width: 0dp -->
+    <!-- dùng layout_weight thì nhỏ chỉnh: vertical thường tk con sẽ height: 0dp, horizontal thường tk con width: 0dp -->
     <!-- Ô số 1 - Đỏ -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,8 +24,7 @@
     <!-- Hàng dưới gồm 2 cột -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <!-- Cột trái (Ô số 2 - Vàng) -->
@@ -35,7 +34,8 @@
             android:layout_weight="1"
             android:background="@android:color/holo_orange_light"
             android:gravity="center"
-            android:layout_marginEnd="2dp">
+            android:layout_marginEnd="2dp"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
