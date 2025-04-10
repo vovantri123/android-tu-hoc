@@ -1,8 +1,10 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd04;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import vn.iostar.handler_asynctask_jsonapi.vd01.LoginActivity;
 
 public class SharedPrefManager {
     // Khởi tạo các hằng key

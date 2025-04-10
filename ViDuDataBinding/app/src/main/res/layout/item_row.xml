@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
         <variable
-            name="viewHolder"
-            type="vn.iostar.databinding.ListUserAdapter.MyViewHolder" />
+            name="user"
+            type="vn.iostar.databinding.model.User" />
+        <variable
+            name="stt"
+            type="String" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:weightSum="5">
+        android:weightSum="5"
+        android:padding="8dp">
 
         <TextView
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="@{viewHolder.stt}"/>
+            android:gravity="center_vertical"
+            android:text="@{stt}" />
 
         <TextView
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="@{viewHolder.firstName}"/>
+            android:gravity="center_vertical"
+            android:text="@{user.firstName}" />
 
         <TextView
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="@{viewHolder.lastName}"/>
+            android:gravity="center_vertical"
+            android:text="@{user.lastName}" />
     </LinearLayout>
 </layout>

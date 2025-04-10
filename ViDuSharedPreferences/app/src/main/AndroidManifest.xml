@@ -17,7 +17,7 @@
          .Vidu2SaveEmailPasswordOnDeviceActivity // Lúc mở lên nó tự động login luôn
          -->
         <activity
-            android:name=".Vidu1SaveLoginActivity"
+            android:name=".vd02.Vidu2SaveEmailPasswordOnDeviceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +26,8 @@
             </intent-filter>
         </activity>
 
-        <!-- Khai báo HomeActivity -->
         <activity
-            android:name=".HomeActivity"
-            android:exported="true" />
+            android:name=".vd02.HomeActivity"/>
     </application>
 
 </manifest>

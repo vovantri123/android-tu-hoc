@@ -1,4 +1,4 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd04;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +20,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import vn.iostar.handler_asynctask_jsonapi.R;
 
 public class Vidu4VolleyLoginActivity extends AppCompatActivity {
 
@@ -109,7 +111,7 @@ public class Vidu4VolleyLoginActivity extends AppCompatActivity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Error parsing response", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Error parsing response:" + response, Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -120,11 +122,13 @@ public class Vidu4VolleyLoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }) {
+
             @Override
             protected Map<String, String> getParams() {
+                // Đảm bảo dữ liệu được gửi dưới dạng x-www-form-urlencoded
                 Map<String, String> params = new HashMap<>();
-                params.put("username", username);
-                params.put("password", password);
+                params.put("username", username); // Chuyển giá trị username
+                params.put("password", password); // Chuyển giá trị password
                 return params;
             }
         };

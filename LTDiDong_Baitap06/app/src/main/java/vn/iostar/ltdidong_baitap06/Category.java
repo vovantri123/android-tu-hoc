@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Category implements Serializable {
-    @SerializedName("id")
+public class Category {
+    @SerializedName("id") // Annotation này là của thư viện Gson, thường dùng với Retrofit. (@SerializedName("id") sẽ map với  "id" trong JSON, rồi gán cho private int id;)
     private int id;
     @SerializedName("name")
     private String name;

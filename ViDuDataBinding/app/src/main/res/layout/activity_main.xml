@@ -6,19 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
        <data>
            <variable
-               name="user"
-               type="vn.iostar.databinding.UserModel" />
+               name="nameVariableVidu1"
+               type="vn.iostar.databinding.model.User" />
        </data>
        <androidx.constraintlayout.widget.ConstraintLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           tools:context=".MainActivity">
+           tools:context=".vd01.MainActivity">
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginTop="136dp"
-               android:text="@{user.lastName}"
+               android:text="@{nameVariableVidu1.lastName}"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="@{user.firstName}"
+               android:text="@{nameVariableVidu1.firstName}"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"

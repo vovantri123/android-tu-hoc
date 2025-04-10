@@ -9,10 +9,10 @@ public class RetrofitClient {
     public static Retrofit getRetrofit() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    // Đường dẫn API
-                    .baseUrl("http://app.iotstar.vn:8081/appfoods/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+                // Đường dẫn API
+                .baseUrl("http://app.iotstar.vn:8081/appfoods/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
         }
         return retrofit;
     }

@@ -27,8 +27,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_category, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category, null);
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;
     }
@@ -60,8 +59,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
         // Load ảnh với Glide
         Glide.with(context)
-                .load(category.getImages()) // URL hoặc đường dẫn hình ảnh
-                .into(holder.images);  // ImageView để hiển thị ảnh
+            .load(category.getImages()) // URL hoặc đường dẫn hình ảnh
+            .into(holder.images);  // ImageView để hiển thị ảnh
 
         /*
         Glide.with(context)

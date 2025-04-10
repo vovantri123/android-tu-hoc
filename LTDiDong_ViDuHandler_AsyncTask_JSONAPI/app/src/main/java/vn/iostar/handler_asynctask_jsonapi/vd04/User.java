@@ -1,4 +1,4 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd04;
 
 public class User {
     private int id;

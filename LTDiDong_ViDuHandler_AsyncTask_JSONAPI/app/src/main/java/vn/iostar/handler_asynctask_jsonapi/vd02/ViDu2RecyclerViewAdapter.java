@@ -1,4 +1,4 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd02;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import vn.iostar.handler_asynctask_jsonapi.R;
 
 public class ViDu2RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

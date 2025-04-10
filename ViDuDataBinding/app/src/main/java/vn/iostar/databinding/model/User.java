@@ -1,9 +1,12 @@
-package vn.iostar.databinding;
+package vn.iostar.databinding.model;
+
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-public class User extends BaseObservable { // Dùng cho ví dụ 2 Data Binding trong RecyclerView
+import vn.iostar.databinding.BR;
+
+public class User extends BaseObservable { // Dùng cho ví dụ 1
     private String lastName;
     private String firstName;
 
@@ -14,7 +17,8 @@ public class User extends BaseObservable { // Dùng cho ví dụ 2 Data Binding 
         this.lastName = lastName;
         this.firstName = firstName;
     }
-    @Bindable
+
+    @Bindable  // lien ket du lieu voi UI
     public String getLastName() {
         return lastName;
     }
@@ -22,7 +26,10 @@ public class User extends BaseObservable { // Dùng cho ví dụ 2 Data Binding 
     public void setLastName(String lastName) {
         this.lastName = lastName;
         notifyPropertyChanged(BR.lastName);
+        // cap nhat UI khi du lieu thay doi
+        // BR là một class tự động được tạo ra bởi Data Binding, chứa ID của các biến Bindable trong XML. Khi bạn khai báo một @Bindable trong getter, hệ thống sẽ sinh ra một ID tương ứng trong BR.java.
     }
+
     @Bindable
     public String getFirstName() {
         return firstName;
@@ -32,4 +39,6 @@ public class User extends BaseObservable { // Dùng cho ví dụ 2 Data Binding 
         this.firstName = firstName;
         notifyPropertyChanged(BR.firstName);
     }
+
+
 }

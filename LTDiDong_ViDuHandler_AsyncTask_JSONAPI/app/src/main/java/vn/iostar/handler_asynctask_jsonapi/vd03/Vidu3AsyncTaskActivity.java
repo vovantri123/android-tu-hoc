@@ -1,10 +1,12 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd03;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import vn.iostar.handler_asynctask_jsonapi.R;
 
 public class Vidu3AsyncTaskActivity extends AppCompatActivity {
 

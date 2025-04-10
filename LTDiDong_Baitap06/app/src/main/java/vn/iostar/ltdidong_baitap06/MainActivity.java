@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rcCate;
     CategoryAdapter categoryAdapter;
     APIService apiService;
-    List<Category> categoryList = new ArrayList<>();
+    ArrayList<Category> categoryList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +37,18 @@ public class MainActivity extends AppCompatActivity {
         // Ánh xạ RecyclerView
         rcCate = findViewById(R.id.rc_category);
         rcCate.setHasFixedSize(true);
-        rcCate.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rcCate.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     }
 
     private void GetCategory() {
         apiService = RetrofitClient.getRetrofit().create(APIService.class);
 
         // Gọi API để lấy danh sách Category
-        Call<List<Category>> call = apiService.getCategoryAll();
-        call.enqueue(new Callback<List<Category>>() {
+        Call<ArrayList<Category>> call = apiService.getCategoryAll();
+
+        call.enqueue(new Callback<ArrayList<Category>>() { // được dùng để thực hiện gọi API bất đồng bộ (asynchronous), tức là chạy ngầm mà không chặn UI của ứng dụng. Khi server phản hồi (thành công hoặc thất bại), các hàm bên trong sẽ được gọi tự động.
             @Override
-            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+            public void onResponse(Call<ArrayList<Category>> call, Response<ArrayList<Category>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     categoryList = response.body();
                     categoryAdapter = new CategoryAdapter(MainActivity.this, categoryList);
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Category>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Category>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Lỗi: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

@@ -26,7 +26,7 @@
         .Vidu4VolleyProfileActivity
          -->
         <activity
-            android:name=".Vidu3AsyncTaskActivity"
+            android:name=".vd03.Vidu3AsyncTaskActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".vd01.LoginActivity" android:exported="false" />
     </application>
 
 </manifest>

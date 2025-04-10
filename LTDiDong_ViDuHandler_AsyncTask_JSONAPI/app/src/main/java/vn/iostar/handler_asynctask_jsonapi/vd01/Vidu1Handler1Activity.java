@@ -1,9 +1,11 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd01;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import vn.iostar.handler_asynctask_jsonapi.R;
 
 public class Vidu1Handler1Activity extends AppCompatActivity {
 

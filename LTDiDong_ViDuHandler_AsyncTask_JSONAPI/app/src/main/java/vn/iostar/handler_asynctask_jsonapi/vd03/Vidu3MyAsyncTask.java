@@ -1,4 +1,4 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd03;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -6,6 +6,8 @@ import android.os.SystemClock;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import vn.iostar.handler_asynctask_jsonapi.R;
 
 public class Vidu3MyAsyncTask extends AsyncTask<Void, Integer, Void> {
     Activity contextParent;

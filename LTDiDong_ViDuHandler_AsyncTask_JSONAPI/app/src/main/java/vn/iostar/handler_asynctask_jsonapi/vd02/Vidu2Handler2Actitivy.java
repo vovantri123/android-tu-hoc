@@ -1,4 +1,4 @@
-package vn.iostar.handler_asynctask_jsonapi;
+package vn.iostar.handler_asynctask_jsonapi.vd02;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import vn.iostar.handler_asynctask_jsonapi.R;
 
 public class Vidu2Handler2Actitivy extends AppCompatActivity {
 
