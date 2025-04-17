@@ -9,13 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
-@RequestMapping(path = "/api/category")
+@RequestMapping(path = "/category")
 public class CategoryAPIController {
     @Autowired
     private ICategoryService categoryService;
@@ -28,7 +26,7 @@ public class CategoryAPIController {
         return new ResponseEntity<>(new Response(true, "Thành công", categoryService.findAll()), HttpStatus.OK);
     }
 
-    @PostMapping(path = "/getCategory")
+    @GetMapping(path = "/")
     public ResponseEntity<?> getCategory(@Validated @RequestParam("id") Long id) {
         Optional<Category> category = categoryService.findById(id);
         if (category.isPresent()) {
@@ -40,8 +38,8 @@ public class CategoryAPIController {
 
     @PostMapping(path = "/addCategory")
     public ResponseEntity<?> addCategory(
-            @Validated @RequestParam("categoryName") String categoryName,
-            @Validated @RequestParam("icon") MultipartFile icon) {
+            @Validated @RequestParam("categoryName") String categoryName){
+//            @Validated @RequestParam("icon") MultipartFile icon) {
 
         Optional<Category> optCategory = categoryService.findByCategoryName(categoryName);
 
@@ -50,13 +48,13 @@ public class CategoryAPIController {
         } else {
             Category category = new Category();
 
-            // Kiểm tra tồn tại file, lưu file
-            if (!icon.isEmpty()) {
-                UUID uuid = UUID.randomUUID();
-                String uuString = uuid.toString();
-                category.setIcon(storageService.getSorageFilename(icon, uuString));
-                storageService.store(icon, category.getIcon());
-            }
+//            // Kiểm tra tồn tại file, lưu file
+//            if (!icon.isEmpty()) {
+//                UUID uuid = UUID.randomUUID();
+//                String uuString = uuid.toString();
+//                category.setIcon(storageService.getSorageFilename(icon, uuString));
+//                storageService.store(icon, category.getIcon());
+//            }
 
             category.setCategoryName(categoryName);
             categoryService.save(category);
@@ -67,21 +65,21 @@ public class CategoryAPIController {
     @PutMapping(path = "/updateCategory")
     public ResponseEntity<?> updateCategory(
             @Validated @RequestParam("categoryId") Long categoryId,
-            @Validated @RequestParam("categoryName") String categoryName,
-            @Validated @RequestParam("icon") MultipartFile icon) {
+            @Validated @RequestParam("categoryName") String categoryName){
+//            @Validated @RequestParam("icon") MultipartFile icon) {
 
         Optional<Category> optCategory = categoryService.findById(categoryId);
 
         if (optCategory.isEmpty()) {
             return new ResponseEntity<>(new Response(false, "Không tìm thấy Category", null), HttpStatus.BAD_REQUEST);
         } else if (optCategory.isPresent()) {
-            // Kiểm tra tồn tại file, lưu file
-            if (!icon.isEmpty()) {
-                UUID uuid = UUID.randomUUID();
-                String uuString = uuid.toString();
-                optCategory.get().setIcon(storageService.getSorageFilename(icon, uuString));
-                storageService.store(icon, optCategory.get().getIcon());
-            }
+//            // Kiểm tra tồn tại file, lưu file
+//            if (!icon.isEmpty()) {
+//                UUID uuid = UUID.randomUUID();
+//                String uuString = uuid.toString();
+//                optCategory.get().setIcon(storageService.getSorageFilename(icon, uuString));
+//                storageService.store(icon, optCategory.get().getIcon());
+//            }
 
             optCategory.get().setCategoryName(categoryName);
             categoryService.save(optCategory.get());
