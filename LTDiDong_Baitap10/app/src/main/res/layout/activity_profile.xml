@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sử dụng RelativeLayout để dễ dàng đặt nút Back và Upload ở góc -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Nút Back ở góc trên bên trái -->
+    <ImageButton
+        android:id="@+id/btnBackProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:padding="8dp"
+        android:src="?attr/homeAsUpIndicator" /> <!-- Icon Back chuẩn của theme -->
+    <!-- Hoặc dùng: android:src="@drawable/ic_arrow_back" nếu bạn có icon này -->
+
+    <!-- Nút Upload Video bằng Button ở góc trên bên phải -->
+    <Button
+        android:id="@+id/btnUploadVideoProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="Upload Video"
+        android:drawableLeft="@drawable/cloud_upload_24"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/white"
+        android:layout_marginStart="8dp"/>
+
+
+    <!-- Phần còn lại của giao diện đặt trong LinearLayout bên dưới các nút trên -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/btnBackProfile"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"> <!-- Căn giữa các thành phần bên trong -->
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:layout_marginTop="20dp"
+            android:contentDescription="User Avatar" />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Email@example.com" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Số video đã đăng: "/>
+            <TextView
+                android:id="@+id/txtVideoCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                tools:text="10"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Cập nhật Avatar bằng URL:"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/etAvatarUrl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Nhập URL ảnh đại diện"
+                android:inputType="textUri"
+                android:maxLines="1"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnUpdateAvatarUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cập nhật"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832332510774",
+    "project_id": "ltdidong-baitap10",
+    "storage_bucket": "ltdidong-baitap10.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832332510774:android:e29fe765e22beedfc44a97",
+        "android_client_info": {
+          "package_name": "vn.iotstar.baitap10"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxsmvStwuM3-qohv3AppJRc09fiqfBbSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

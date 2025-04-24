@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- EditText Username -->
+    <EditText
+        android:id="@+id/editUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="EditText Username"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!-- ImageView 1: Chọn ảnh -->
+    <ImageView
+        android:id="@+id/imgChoose"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/editUserName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button chọn file -->
+    <Button
+        android:id="@+id/btnChoose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CHỌN FILE"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/imgChoose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button upload -->
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="UPLOAD IMAGES"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/btnChoose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_marginTop="8dp" />
+
+    <!-- TextView Username -->
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView Username"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/btnUpload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- ImageView 2: Hiển thị ảnh sau khi upload -->
+    <ImageView
+        android:id="@+id/imgMultipart"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/tvUsername"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
